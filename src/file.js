@@ -43,7 +43,7 @@ fetch("https://api.themoviedb.org/3/trending/tv/week?api_key=fbaab79c9fc8de31118
           var divCard = document.createElement('div');
           divCard.style.backgroundColor='#E4E6C3';
           divCard.className='card col col-md-3 shadow-lg p-1 mb-3 rounded float-left'; 
-          divCard.style.width='25vw';
+          // divCard.style.width='25vw';
           // divCard.style.height='75vh';
           container.appendChild(divCard);
           var imageUrl = 'https://image.tmdb.org/t/p/w500';
@@ -59,21 +59,13 @@ fetch("https://api.themoviedb.org/3/trending/tv/week?api_key=fbaab79c9fc8de31118
           cardBody.className = 'card-body';          
           divCard.appendChild(cardBody);
           var cardTitle = document.createElement('h5');
-          cardTitle.style.maxHeight='5vh'; 
-          cardTitle.style.minHeight='5vh'; 
+          cardTitle.style.height='5vh';
           cardTitle.className = 'card-title'; 
+          
           cardTitle.textContent = results['results'][i]['title'];
+      
           cardBody.appendChild(cardTitle);
-
-          var div2=document.createElement('div');
-          div2.className='container-fluid btn btn-dark my-2 my-sm-0 ';
-          divCard.appendChild(div2);
-          var button2=document.createElement('button');
-          button2.type='click';
-          button2.style.backgroundColor= '#FAFAFF';
-          button2.textContent= 'Add to favorites';
-          div2.appendChild(button2);
-
+  
           var ul = document.createElement('ul');
           ul.className='list-group list-group-flush'; 
           divCard.appendChild(ul);
